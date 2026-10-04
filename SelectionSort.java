@@ -1,0 +1,30 @@
+public class SelectionSort{
+    public static void main(String args[]){
+        int nums[]= {4,6,2,7,8,9,1};
+        int size= nums.length;
+        int temp=0;
+
+        System.out.println("Before Sorting:");
+        for (int n : nums)
+            System.out.print(n + " ");
+
+        for(int i=0; i<size-1; i++){
+            int minIndex=i;
+            for(int j=i+1; j<size; j++){
+                if(nums[minIndex]>nums[j]){
+                    minIndex=j;
+                }
+            }
+            
+            temp=nums[minIndex];
+            nums[minIndex]=nums[i];
+            nums[i]=temp;
+
+        }
+
+        System.out.println();
+        System.out.println("After Sorting:");
+        for (int n : nums)
+            System.out.print(n + " ");
+    }
+}
